@@ -86,7 +86,26 @@ static void display(void)
     //HALF-CIRCLE START
     //////////////////////////////////////////////////////////////
 
+    float xPos = 0; float yPos = 0; float radius = 0.7f;
 
+    float prevX = xPos;
+    float prevY = yPos - radius;
+    for (int i = 0; i <= steps; i++) {
+        float newX = radius * sin(angle * i);
+        float newY = -radius * cos(angle * i);
+
+
+        glBegin(GL_TRIANGLES);//half-circle
+        glColor3d(0, 0.5f, 0);
+        glVertex3f(0.0f, 3, -20);
+        glVertex3f(prevX, prevY, 0.0f);
+        glVertex3f(newX, newY, 0.0f);
+        glEnd();
+
+
+        prevX = newX;
+        prevY = newY;
+    }
 
      /////////////////////////////////////////////////////////////
     //HALF-CIRCLE END
@@ -96,7 +115,23 @@ static void display(void)
     //RECTANGLE START
     ////////////////////////////////////////////////////////////
 
+     glBegin(GL_POLYGON);//rectangle
 
+
+    glColor3d(128, 0, 0);
+    glVertex3f(-6, 3, -20);//1st
+
+    glColor3d(128, 0, 0);
+    glVertex3f(6, 3, -20);//2nd
+
+    glColor3d(128, 0, 0);
+    glVertex3f(6, 4, -20);//3rd
+
+    glColor3d(128, 0, 0);
+    glVertex3f(-6, 4, -20);//4th
+
+
+    glEnd();
 
     ////////////////////////////////////////////////////////////
     //RECTANGLE END
