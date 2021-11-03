@@ -139,7 +139,23 @@ static void display(void)
 
     //OUTER-SQUARE START
     ///////////////////////////////////////////////////////////
+glBegin(GL_POLYGON);//outer square
 
+
+    glColor3d(128, 0, 0);
+    glVertex3f(5, 3, -20);//1st
+
+    glColor3d(128, 0, 0);
+    glVertex3f(5, -3, -20);//2nd
+
+    glColor3d(128, 0, 0);
+    glVertex3f(-5, -3, -20);//3rd
+
+    glColor3d(128, 0, 0);
+    glVertex3f(-5, 3, -20);//4th
+
+
+    glEnd();
 
 
     //////////////////////////////////////////////////////////
@@ -167,7 +183,44 @@ static void display(void)
 
     //DOOR START
     /////////////////////////////////////////////////////
+ glBegin(GL_POLYGON);//Door
 
+
+    glColor3f(0.5f, 1.0f, 1.0f);//cyan
+    glVertex3f(1, 1, -20);//1st
+
+    glColor3f(0.5f, 1.0f, 1.0f);//cyan
+    glVertex3f(1, -3, -20);//2nd
+
+    glColor3f(0.5f, 1.0f, 1.0f);//cyan
+    glVertex3f(-1, -3, -20);//3rd
+
+    glColor3f(0.5f, 1.0f, 1.0f);//cyan
+    glVertex3f(-1, 1, -20);//4th
+
+
+    glEnd();
+
+    float xDPos = 0; float yDPos = 0; float radiusD = 0.03f;//Door Knob
+
+    float prevDX = xDPos;
+    float prevDY = yDPos - radiusD;
+    for (int i = 0; i <= knobSteps; i++) {
+        float newDX = radiusD * sin(angle * i);
+        float newDY = -radiusD * cos(angle * i);
+
+
+        glBegin(GL_TRIANGLES);
+        glColor3d(0, 0.5f, 0);
+        glVertex3f(0.7, -1, -20);
+        glVertex3f(prevDX, prevDY, 0.0f);
+        glVertex3f(newDX, newDY, 0.0f);
+        glEnd();
+
+
+        prevDX = newDX;
+        prevDY = newDY;
+    }
 
 
      ///////////////////////////////////////////////////////
