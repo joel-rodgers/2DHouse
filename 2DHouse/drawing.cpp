@@ -162,9 +162,43 @@ glBegin(GL_POLYGON);//outer square
     //OUTER-SQUARE END
 
 
-     //WINDOW 1 START
+   //WINDOW 1 START
     /////////////////////////////////////////////////////////
 
+    glBegin(GL_POLYGON);//window 1
+
+
+    glColor3d(0, 255, 0);
+    glVertex3f(-4, 0, -20);//1st
+
+    glColor3d(0, 255, 0);
+    glVertex3f(-2, 0, -20);//2nd
+
+    glColor3d(0, 255, 0);
+    glVertex3f(-2, 2, -20);//3rd
+
+    glColor3d(0, 255, 0);
+    glVertex3f(-4, 2, -20);//4th
+
+
+    glEnd();
+    
+
+    glColor3d(128, 0, 0);//window 1
+    glBegin(GL_LINES);
+    {
+        glVertex3f(-2, 1, -20);
+        glVertex3f(-4, 1, -20);
+    }
+    glEnd();
+
+    glColor3d(128, 0, 0);//window 1
+    glBegin(GL_LINES);
+    {
+        glVertex3f(-3, 0, -20);
+        glVertex3f(-3, 2, -20);
+    }
+    glEnd();
 
 
     //////////////////////////////////////////////////
@@ -175,7 +209,39 @@ glBegin(GL_POLYGON);//outer square
     //WINDOW 2 START
     //////////////////////////////////////////////////
 
+    glBegin(GL_POLYGON);//window 2
 
+
+    glColor3d(0, 255, 0);
+    glVertex3f(2, 0, -20);//1st
+
+    glColor3d(0, 255, 0);
+    glVertex3f(4, 0, -20);//2nd
+
+    glColor3d(0, 255, 0);
+    glVertex3f(4, 2, -20);//3rd
+
+    glColor3d(0, 255, 0);
+    glVertex3f(2, 2, -20);//4th
+
+
+    glEnd();
+
+    glColor3d(1.0, 1.0, 1.0);//window 2
+    glBegin(GL_LINES);
+    {
+        glVertex3f(2, 1, -20);
+        glVertex3f(4, 1, -20);
+    }
+    glEnd();
+
+    glColor3d(128, 0, 0);//window 2
+    glBegin(GL_LINES);
+    {
+        glVertex3f(3, 0, -20);
+        glVertex3f(3, 2, -20);
+    }
+    glEnd();
 
     ////////////////////////////////////////////////////
     //WINDOW 2 END
